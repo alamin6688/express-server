@@ -13,8 +13,10 @@ app.get("/", (req, res) => {
     res.send("Welcome To Todos App!");
 });
 app.get("/todos", (req, res) => {
+    console.log("From query", req.query);
+    console.log("From paramas", req.params);
     const data = fs_1.default.readFileSync(filePath, { encoding: "utf-8" });
-    console.log(data);
+    // console.log(data);
     res.json(data);
 });
 app.post("/todos/create-todo", (req, res) => {
